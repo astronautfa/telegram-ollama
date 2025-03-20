@@ -1,0 +1,22 @@
+# Telegram API client
+telethon
+
+# Proxy support
+pysocks
+
+# Environment variables
+python-dotenv
+
+# API Server
+fastapi
+uvicorn
+pydantic
+
+# For handling HTTP requests (if needed)
+httpx
+
+# For async operations
+asyncio
+
+rich
+pyperclip
