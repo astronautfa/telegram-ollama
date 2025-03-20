@@ -1,6 +1,18 @@
-# Telegram LLM API (Ollama Compatible)
+# Telegram Bots Ollama API
 
 This project provides an Ollama-compatible API interface to Telegram bots, allowing you to use platforms like OpenWebUI with Telegram-based language models.
+
+## Philosophy
+
+Telegram Bots Ollama API bridges the gap between powerful AI models accessible via Telegram and your local workflow tools. We believe that:
+
+1. **AI should be accessible everywhere**: By connecting Telegram bots to Ollama-compatible interfaces, we enable users to interact with advanced AI models through familiar tools.
+
+2. **Your tools, your choice**: Whether you prefer a terminal, a web UI, or integration into development environments, you should be able to use AI assistants your way.
+
+3. **Simplicity and flexibility**: The tool should be simple to set up but extensible enough to accommodate diverse workflows and use cases.
+
+Currently, the project supports models like GrokAI, which is freely available to Telegram Premium users through the @GrokAI bot.
 
 ## Features
 
@@ -62,19 +74,6 @@ The API server will run on the host and port specified in your `.env` file (defa
 
 #### View Chat History
 
-To view chat history from the command line:
-
-```bash
-# List all chat histories
-python view_history.py list
-
-# List chat histories for a specific date
-python view_history.py list -d 2025-03-20
-
-# View a specific chat history
-python view_history.py view 2025-03-20 1
-```
-
 All chat histories are stored in the `history/` directory in both markdown (`.md`) and JSON (`.json`) formats.
 
 ## Using with OpenWebUI
@@ -105,9 +104,61 @@ Create a systemd service file for automatic startup and restarts.
 - **Authentication Problems**: If you're using two-factor authentication with Telegram, you may need to handle that in the code.
 - **Missing Responses**: The current implementation uses a simplified placeholder for responses. You'll need to implement proper event handling.
 
+## Supported Models
+
+Currently, we recommend using this tool with:
+
+- **@GrokAI**: Available for free to Telegram Premium users
+- Other Telegram-based AI bots (implementation may vary)
+
 ## Contributing
 
-Feel free to submit issues or pull requests!
+Contributions are welcome! Whether it's bug fixes, feature enhancements, or documentation improvements, please feel free to submit issues or pull requests.
+
+## Roadmap & TODOs
+
+### API Integration
+
+- [ ] Test Telegram API with Ollama
+  - [ ] Verify compatibility with OpenWebUI
+  - [ ] Test with other Ollama-compatible clients
+  - [ ] Implement proper error handling for API responses
+  - [ ] Add rate limiting and retry logic
+
+### File Management
+
+- [ ] Add file upload functionality to terminal interface
+  - [ ] Support basic document formats (PDF, DOCX, TXT)
+  - [ ] Implement image uploads
+  - [ ] Add progress indicators for large files
+- [ ] Implement file tree analysis for coding projects
+  - [ ] Create keyboard-based navigation for directory structures
+  - [ ] Add context selection capabilities
+  - [ ] Implement syntax highlighting for code files
+
+### Agent Capabilities
+
+- [ ] Transform into a workflow agent
+  - [ ] Enable task automation based on chat interactions
+  - [ ] Add scheduled operations
+  - [ ] Create hooks for external tools and scripts
+  - [ ] Implement context awareness between sessions
+
+### Interface Improvements
+
+- [ ] Enhance command line interface
+  - [ ] Add theme customization
+  - [ ] Implement split-screen views
+  - [ ] Add conversation search functionality
+  - [ ] Create a TUI (Text User Interface) with panels
+  - [ ] Add keyboard shortcuts for common operations
+
+### Multi-Model Support
+
+- [ ] Add support for multiple Telegram bots
+  - [ ] Implement model switching
+  - [ ] Create model comparison features
+  - [ ] Add context sharing between models
 
 ## License
 
